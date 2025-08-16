@@ -233,7 +233,7 @@ def main():
     if not TOKEN or not RENDER_URL:
         raise RuntimeError("請設定環境變數 TOKEN / RENDER_URL")
 
-    request = HTTPXRequest(connection_pool_size=20, pool_timeout=30.0, timeout=Timeout(10.0, connect=10.0))
+    request = HTTPXRequest(connection_pool_size=20, pool_timeout=30.0)
     application = Application.builder().token(TOKEN).request(request).build()
 
     # 指令
